@@ -15,6 +15,10 @@
     <servlet-class>edu.ycp.cs320.jhofmann1.servlet.AddNumbersServlet</servlet-class>
   </servlet>
   <servlet>
+    <servlet-name>MultiplyNumbersServlet</servlet-name>
+    <servlet-class>edu.ycp.cs320.jhofmann1.servlet.MultiplyNumbersServlet</servlet-class>
+  </servlet>
+  <servlet>
     <servlet-name>GuessingGameServlet</servlet-name>
     <servlet-class>edu.ycp.cs320.jhofmann1.servlet.GuessingGameServlet</servlet-class>
   </servlet>
@@ -23,6 +27,10 @@
   <servlet>
     <servlet-name>AddNumbersAjaxServlet</servlet-name>
     <servlet-class>edu.ycp.cs320.jhofmann1.servlet.ajax.AddNumbersAjaxServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MultiplyNumbersAjaxServlet</servlet-name>
+    <servlet-class>edu.ycp.cs320.jhofmann1.servlet.ajax.MultiplyNumbersAjaxServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>NextGuessAjaxServlet</servlet-name>
@@ -39,6 +47,10 @@
     <url-pattern>/addNumbers</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+    <servlet-name>MultiplyNumbersServlet</servlet-name>
+    <url-pattern>/multiplyNumbers</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
     <servlet-name>GuessingGameServlet</servlet-name>
     <url-pattern>/guessingGame</url-pattern>
   </servlet-mapping>
@@ -47,6 +59,10 @@
   <servlet-mapping>
     <servlet-name>AddNumbersAjaxServlet</servlet-name>
     <url-pattern>/ajax/addNumbers</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MultiplyNumbersAjaxServlet</servlet-name>
+    <url-pattern>/ajax/multiplyNumbers</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>NextGuessAjaxServlet</servlet-name>
