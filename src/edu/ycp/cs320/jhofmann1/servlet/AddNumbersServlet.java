@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import edu.ycp.cs320.jhofmann1.controller.AddNumbersController;
+import edu.ycp.cs320.jhofmann1.controller.NumbersController;
 
 public class AddNumbersServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -33,7 +33,7 @@ public class AddNumbersServlet extends HttpServlet {
 			if (first == null || second == null || third == null) {
 				errorMessage = "Please specify three numbers";
 			} else {
-				AddNumbersController controller = new AddNumbersController();
+				NumbersController controller = new NumbersController();
 				result = controller.add(first, second, third);
 			}
 		} catch (NumberFormatException e) {
