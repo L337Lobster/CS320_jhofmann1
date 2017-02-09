@@ -30,7 +30,7 @@ public class MultiplyNumbersServlet extends HttpServlet {
 			Double second = getDoubleFromParameter(req.getParameter("second"));
 
 			if (first == null || second == null) {
-				errorMessage = "Please specify three numbers";
+				errorMessage = "Please specify two numbers";
 			} else {
 				NumbersController controller = new NumbersController();
 				result = controller.multiply(first, second);
