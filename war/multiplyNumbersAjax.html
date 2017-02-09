@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Add Numbers (AJAX)</title>
+		<title>Multiply Numbers (AJAX)</title>
 		
 		<script
 			src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
@@ -20,10 +20,10 @@
 		
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$("#addNumbersButton").click(function() {
+				$("#multiplyNumbersButton").click(function() {
 					$.ajax({
 						type: 'POST',
-						url: '/lab12/ajax/addNumbers',
+						url: '/lab12/ajax/multiplyNumbers',
 						data: { first: $("#firstNumberElt").val(), second: $("#secondNumberElt").val() },
 						success:
 							function(data, textStatus, jqXHR) {
@@ -51,16 +51,12 @@
 				<td><input id="secondNumberElt" type="text" size="12" /></td>
 			</tr>
 			<tr>
-				<td class="label">Third number:</td>
-				<td><input id="secondNumberElt" type="text" size="12" /></td>
-			</tr>
-			<tr>
 				<td class="label">Result:</td>
 				<td><span id="resultElt"></span></td>
 			</tr>
 		</table>
 		<div>
-			<button id="addNumbersButton">Add Numbers</button>
+			<button id="multiplyNumbersButton">Multiply Numbers</button>
 		</div>
 		<div>
 			<span id="errorElt" class="error"></span>

@@ -15,7 +15,7 @@ public class MultiplyNumbersServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		req.getRequestDispatcher("/_view/addNumbers.jsp").forward(req, resp);
+		req.getRequestDispatcher("/_view/multiplyNumbers.jsp").forward(req, resp);
 	}
 	
 	@Override
@@ -28,13 +28,12 @@ public class MultiplyNumbersServlet extends HttpServlet {
 		try {
 			Double first = getDoubleFromParameter(req.getParameter("first"));
 			Double second = getDoubleFromParameter(req.getParameter("second"));
-			Double third = getDoubleFromParameter(req.getParameter("third"));
 
-			if (first == null || second == null || third == null) {
+			if (first == null || second == null) {
 				errorMessage = "Please specify three numbers";
 			} else {
 				NumbersController controller = new NumbersController();
-				result = controller.add(first, second, third);
+				result = controller.multiply(first, second);
 			}
 		} catch (NumberFormatException e) {
 			errorMessage = "Invalid double";
@@ -43,14 +42,13 @@ public class MultiplyNumbersServlet extends HttpServlet {
 		// Add parameters as request attributes
 		req.setAttribute("first", req.getParameter("first"));
 		req.setAttribute("second", req.getParameter("second"));
-		req.setAttribute("third", req.getParameter("third"));
 		
 		// Add result objects as request attributes
 		req.setAttribute("errorMessage", errorMessage);
 		req.setAttribute("result", result);
 		
 		// Forward to view to render the result HTML document
-		req.getRequestDispatcher("/_view/addNumbers.jsp").forward(req, resp);
+		req.getRequestDispatcher("/_view/multiplyNumbers.jsp").forward(req, resp);
 	}
 
 	private Double getDoubleFromParameter(String s) {

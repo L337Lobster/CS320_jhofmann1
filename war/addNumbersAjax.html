@@ -24,7 +24,7 @@
 					$.ajax({
 						type: 'POST',
 						url: '/lab12/ajax/addNumbers',
-						data: { first: $("#firstNumberElt").val(), second: $("#secondNumberElt").val() },
+						data: { first: $("#firstNumberElt").val(), second: $("#secondNumberElt").val(), third: $("#thirdNumberElt").val() },
 						success:
 							function(data, textStatus, jqXHR) {
 								$("#resultElt").text(data);
