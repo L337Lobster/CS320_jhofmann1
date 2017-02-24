@@ -1,7 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<title>Multiply Numbers (AJAX)</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script
 			src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
 			type="text/javascript">
@@ -41,25 +51,27 @@
 	</head>
 
 	<body>
-		<table>
-			<tr>
-				<td class="label">First number:</td>
-				<td><input id="firstNumberElt" type="text" size="12" /></td>
-			</tr>
-			<tr>
-				<td class="label">Second number:</td>
-				<td><input id="secondNumberElt" type="text" size="12" /></td>
-			</tr>
-			<tr>
-				<td class="label">Result:</td>
-				<td><span id="resultElt"></span></td>
-			</tr>
-		</table>
-		<div>
-			<button id="multiplyNumbersButton">Multiply Numbers</button>
-		</div>
-		<div>
-			<span id="errorElt" class="error"></span>
+		<div class="container">
+			<table class="table">
+				<tr>
+					<td class="label">First number:</td>
+					<td><input id="firstNumberElt" type="text" size="12" /></td>
+				</tr>
+				<tr>
+					<td class="label">Second number:</td>
+					<td><input id="secondNumberElt" type="text" size="12" /></td>
+				</tr>
+				<tr>
+					<td class="label">Result:</td>
+					<td><span id="resultElt"></span></td>
+				</tr>
+			</table>
+			<div>
+				<button type="button" class="btn btn-default" id="multiplyNumbersButton">Multiply Numbers</button>
+			</div>
+			<div>
+				<span id="errorElt" class="error"></span>
+			</div>
 		</div>
 	</body>
 </html>
