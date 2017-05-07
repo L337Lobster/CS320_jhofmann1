@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import edu.ycp.cs320.jhofmann1.controller.NumbersController;
+import edu.ycp.cs320.jhofmann1.model.Numbers;
 
 public class AddNumbersServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -25,6 +26,7 @@ public class AddNumbersServlet extends HttpServlet {
 		// Decode form parameters and dispatch to controller
 		String errorMessage = null;
 		Double result = null;
+		Numbers model = new Numbers();
 		try {
 			Double first = getDoubleFromParameter(req.getParameter("first"));
 			Double second = getDoubleFromParameter(req.getParameter("second"));
@@ -34,20 +36,19 @@ public class AddNumbersServlet extends HttpServlet {
 				errorMessage = "Please specify three numbers";
 			} else {
 				NumbersController controller = new NumbersController();
+				model.setFirst(first);
+				model.setSecond(second);
+				model.setThird(third);
 				result = controller.add(first, second, third);
+				model.setResult(result);
 			}
 		} catch (NumberFormatException e) {
 			errorMessage = "Invalid double";
 		}
 		
-		// Add parameters as request attributes
-		req.setAttribute("first", req.getParameter("first"));
-		req.setAttribute("second", req.getParameter("second"));
-		req.setAttribute("third", req.getParameter("third"));
-		
 		// Add result objects as request attributes
 		req.setAttribute("errorMessage", errorMessage);
-		req.setAttribute("result", result);
+		req.setAttribute("model", model);
 		
 		// Forward to view to render the result HTML document
 		req.getRequestDispatcher("/_view/addNumbers.jsp").forward(req, resp);
